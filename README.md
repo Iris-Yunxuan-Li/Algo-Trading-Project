@@ -1,8 +1,8 @@
-# Algorithmic Trading System Overview
+# Algorithmic Trading System Overview -- Iris Li
 
 ## Introduction
 
-This algorithmic trading system automates the execution of a trading strategy on the Alpaca platform, focusing on the long-short term moving average crossover. The primary objectives are to achieve consistent returns, manage risk through stop-loss orders, and adapt to dynamic market conditions using backtesting.
+This algorithmic trading system automates the execution of a trading strategy on the Alpaca platform, focusing on the long-short term moving average crossover. The primary objectives are to achieve consistent returns, manage risk through stop-loss orders, and adapt to dynamic market conditions using backtesting and performance metrics such as Monte Carlo simulations and sharp ratio.
 
 ## Market Data Retrieval
 
@@ -11,7 +11,6 @@ This algorithmic trading system automates the execution of a trading strategy on
 Market data is retrieved from Alpaca using the `alpaca-py` library, which provides a Python interface to the Alpaca API. The data includes historical stock prices that are essential for calculating technical indicators and backtesting the strategy.
 
 ## Data Storage Strategy
-
 ### Storage Method
 Market data is retrieved directly from the Alpaca API and used in real-time for both backtesting and live trading. Data is processed and analyzed within the script.
 
@@ -52,6 +51,11 @@ This section of the code retrieves historical stock data for **TSLA** using the 
 
 The backtesting function simulates trading based on historical data. It checks for crossover events between the short-term and long-term moving averages, recording the profits or losses for each trade. This allows us to evaluate the strategy's performance before deploying it in live trading.
 
+### Performance metrics
+
+Performance metrics, such as the Sharpe Ratio and maximum drawdown, are calculated to assess the strategy's risk-adjusted performance. Additionally, a Monte Carlo simulation is implemented to evaluate the robustness of the strategy under different market conditions.
+
+
 #### Live Trading with Stop-Loss Orders
 
 This section implements the trading strategy in a live paper trading environment. The code continuously monitors real-time data, places buy or sell orders based on crossover signals, and sets a stop-loss order for risk management.
@@ -68,7 +72,7 @@ The trading strategy is rigorously backtested using historical data. This helps 
 
 ### Optimization
 
-Key parameters, such as the moving average windows and stop-loss levels, were optimized to balance the trade-off between risk and reward. The backtesting results guided these adjustments.
+Key parameters, such as the moving average windows were optimized to balance the trade-off between risk and reward. The were optimized using backtesting results.
 
 ## Automation and Scheduling
 
@@ -102,7 +106,7 @@ Key lessons learned include the importance of thorough backtesting and optimizat
 
 ### Improvements
 
-Future improvements include refining the stop-loss mechanism and exploring additional technical indicators to complement the moving average strategy. These enhancements could further optimize performance and reduce risk.
+Future improvements include refining the stop-loss mechanism and exploring additional technical indicators to complement the moving average strategy. A potential combined metric score could give better backtesting results. These enhancements could further optimize performance and reduce risk.
 
 ## Compliance and Legal Considerations
 
